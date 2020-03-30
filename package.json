@@ -6,10 +6,10 @@
   "types": "dist/index.d.ts",
   "prepublish": "tsc -p .",
   "scripts": {
-    "build": "tsc -p . ",
+    "build": "webpack",
     "test": "jest",
     "start": "ts-node ./src/index.ts",
-    "deploy": "yarn build && ncp ./ Z:/pi-webadmin"
+    "deploy": "yarn build && ncp ./build \\\\192.168.8.102\\shared"
   },
   "author": "Nils Eriksson",
   "license": "MIT",
@@ -21,8 +21,11 @@
     "ncp": "^2.0.0",
     "prettier": "^2.0.2",
     "ts-jest": "^25.2.1",
+    "ts-loader": "^6.2.2",
     "ts-node": "^8.8.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "express": "^4.17.1",
